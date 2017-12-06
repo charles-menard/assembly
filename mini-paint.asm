@@ -1,7 +1,8 @@
+; display a black, 320 by 200 pixels video mode
+;draw white pixel when you right click
+; saves the drawing in  .txt file if you press space
+; the end (the file saving part) is not by me
 
-; dessine des pixels blancs avec le bouton gauche de la souris, 
-;enregistre un fichier avec les pixels si on pèse sur espace, quitte si on pèse sur escape
-; la création du fichier n'est pas de moi
 org 100h
 
 xor ax,ax
@@ -23,7 +24,7 @@ cmp al,50
 jz exit
 
 souris:
-mov ax,3 ; vérifie si le bouton est enfoncer
+mov ax,3 ; vÃ©rifie si le bouton est enfoncer
 int 33h
 push dx
 mov ax,cx
@@ -50,10 +51,10 @@ xor cx,cx
 xor dx,dx
 
 rowloop:
-inc dx ; pour faire descendre dune rangé
+inc dx ; pour faire descendre dune rangÃ©
 cmp dx,201
 jz createfile
-xor cx,cx ; pour remettre les colonne ;à 0
+xor cx,cx ; pour remettre les colonne ;Ã  0
 	columnloop:
 	inc cx
 	cmp cx,321  
